@@ -4,6 +4,7 @@ import { DeleteOutlined, InfoCircleOutlined } from "@ant-design/icons";
 import { createStaticStyles } from 'antd-style';
 import { useNotificationContext } from '../../../context/NotificationProvider';
 import { useRepairStore } from '../../../stores/repairStore';
+import { useResponsive } from '../../../hook/useResponsive';
 
 const classNames = createStaticStyles(({ css }) => ({
     container: css`
@@ -22,43 +23,88 @@ const DeleteButton = ({ issueId }: { issueId: string }) => {
         });
 
     }
-
+    const ismobile = useResponsive({ breakpoint: 786 })
     return (
-        <Tooltip color="red" title="حذف">
-            <Popconfirm
-                classNames={classNames}
-                placement='topLeft'
-                title={
-                    null
-                }
-                icon={null}
-                description=
-                {
-                    <div className='w-full text-right flex gap-1  '>
-                        <p>
-                            آیا از حذف این مورد مطمئن هستید؟
-                        </p>
 
-                        <InfoCircleOutlined style={{ color: "#f25632" }} />
-                    </div>
-                }
+        <>
+            {!ismobile ?
+                <Tooltip color="red" title="حذف">
+                    <Popconfirm
+                        classNames={classNames}
+                        placement='topLeft'
+                        title={
+                            null
+                        }
+                        icon={null}
+                        description=
+                        {
+                            <div className='w-full text-right flex gap-1  '>
+                                <p>
+                                    آیا از حذف این مورد مطمئن هستید؟
+                                </p>
+
+                                <InfoCircleOutlined style={{ color: "#f25632" }} />
+                            </div>
+                        }
 
 
 
 
 
-                okText="حذف"
-                cancelText="انصراف"
-                okButtonProps={{ danger: true }}
-                onConfirm={() => removeIssueHandler(issueId)}
-            >
-                <Button
-                    shape="circle"
-                    danger
-                    icon={<DeleteOutlined />}
-                />
-            </Popconfirm>
-        </Tooltip>
+                        okText="حذف"
+                        cancelText="انصراف"
+                        okButtonProps={{ danger: true }}
+                        onConfirm={() => removeIssueHandler(issueId)}
+                    >
+                        <Button
+                            shape="circle"
+                            danger
+                            icon={<DeleteOutlined />}
+                        />
+                    </Popconfirm>
+                </Tooltip>
+
+                :
+
+                <Popconfirm
+                    classNames={classNames}
+                    placement='topLeft'
+                    title={
+                        null
+                    }
+                    icon={null}
+                    description=
+                    {
+                        <div className='w-full text-right flex gap-1  '>
+                            <p>
+                                آیا از حذف این مورد مطمئن هستید؟
+                            </p>
+
+                            <InfoCircleOutlined style={{ color: "#f25632" }} />
+                        </div>
+                    }
+
+
+
+
+
+                    okText="حذف"
+                    cancelText="انصراف"
+                    okButtonProps={{ danger: true }}
+                    onConfirm={() => removeIssueHandler(issueId)}
+                >
+                    <Button
+                        shape="circle"
+                        danger
+                        icon={<DeleteOutlined />}
+                    />
+                </Popconfirm>
+
+
+
+            }
+
+        </>
     )
 }
 
