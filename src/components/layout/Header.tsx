@@ -34,7 +34,7 @@ const Header = () => {
           </h1>
 
           <p className="mt-1 text-sm text-text-secondary">
-            ثبت درخواست‌های تعمیر موبایل
+          ثبت درخواست‌های تعمیر دستگاه
           </p>
         </div>
 
