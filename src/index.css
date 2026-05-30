@@ -1,0 +1,382 @@
+@import "tailwindcss";
+@layer tailwind-base, antd;
+
+@layer theme, base, components, utilities;
+
+@theme {
+  /* =========================
+     PRIMARY
+  ========================= */
+
+  --color-primary: #262626;
+  --color-primary-hover: #404040;
+  --color-primary-active: #171717;
+  --color-primery-black: #0d0d0d;
+  --color-primery-gray: rgba(32, 38, 47, 0.75);
+
+  --color-primary-bg: #f5f5f5;
+  --color-primary-bg-hover: #e5e5e5;
+
+  --color-primary-border: #d4d4d4;
+  --color-primary-border-hover: #a3a3a3;
+
+  --color-primary-text: #262626;
+
+  /* =========================
+     SUCCESS
+  ========================= */
+
+  --color-success: #22c55e;
+  --color-success-hover: #16a34a;
+  --color-success-active: #15803d;
+
+  --color-success-bg: #f0fdf4;
+  --color-success-bg-hover: #dcfce7;
+
+  --color-success-border: #bbf7d0;
+  --color-success-border-hover: #86efac;
+
+  /* =========================
+     WARNING
+  ========================= */
+
+  --color-warning: #f97316;
+  --color-warning-hover: #ea580c;
+  --color-warning-active: #c2410c;
+
+  --color-warning-bg: #fff7ed;
+  --color-warning-bg-hover: #fed7aa;
+
+  --color-warning-border: #fdba74;
+  --color-warning-border-hover: #fb923c;
+
+  /* =========================
+     ERROR
+  ========================= */
+
+  --color-error: #ef4444;
+  --color-error-hover: #dc2626;
+  --color-error-active: #b91c1c;
+
+  --color-error-bg: #fef2f2;
+  --color-error-bg-hover: #fecaca;
+
+  --color-error-border: #fca5a5;
+  --color-error-border-hover: #f87171;
+
+  /* =========================
+     TEXT
+  ========================= */
+
+  --color-text: #262626;
+  --color-text-secondary: rgba(32, 38, 47, 0.75);
+  --color-text-tertiary: #737373;
+  --color-text-disabled: #a3a3a3;
+
+  /* =========================
+     BACKGROUND
+  ========================= */
+
+  --color-bg-base: #ffffff;
+  --color-bg-layout: #fafafa;
+  --color-bg-container: #ffffff;
+  --color-bg-elevated: #ffffff;
+
+  --color-bg-mask: rgba(38, 38, 38, 0.45);
+  --color-bg-spotlight: rgba(38, 38, 38, 0.85);
+
+  /* =========================
+     BORDER
+  ========================= */
+
+  --color-border: #e5e5e5;
+  --color-border-secondary: #f5f5f5;
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-xs: 2px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  /* =========================
+     SHADOW
+  ========================= */
+
+  --shadow-primary:
+    0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px -1px rgba(0, 0, 0, 0.1);
+
+  --shadow-secondary:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+
+  /* =========================
+     FONT
+  ========================= */
+
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 786px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1400px;
+  --breakpoint-2xl: 1536px;
+
+
+  --font-vazir: "Vazir", sans-serif;
+}
+
+@layer base {
+
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border);
+  }
+
+  body {
+    font-family: var(--font-vazir);
+
+    direction: rtl;
+    text-align: right;
+  }
+
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scroll-padding: 4rem;
+  direction: rtl;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  text-align: right;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+
+  body.loading_info {
+    overflow-y: hidden !important;
+
+    touch-action: none !important;;
+
+    -webkit-overflow-scrolling: touch !important;;
+  }
+
+  body:has(.loading_info) {
+    overflow-y: hidden
+  }
+
+
+  body:-webkit-has(.loading_info) {
+    overflow-y: hidden;
+    touch-action: none;
+  }
+
+  body:-moz-has(.loading_info) {
+    overflow-y: hidden;
+    touch-action: none;
+  }
+
+  body:-ms-has(.loading_info) {
+    overflow-y: hidden;
+    touch-action: none;
+  }
+
+}
+
+.ant-popover-container {
+  -webkit-backdrop-filter: blur(6px)
+}
+
+.ant-popover {
+  direction: ltr !important
+}
+
+/* .ant-ribbon {
+direction: ltr !important
+} */
+
+
+@layer components {
+  .form_input {
+    @apply flex gap-4 max-sm:flex-col mb-4 w-full
+  }
+
+}
+
+
+
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../src/assets/fonts/Vazir.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../src/assets/fonts/Vazir-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../src/assets/fonts/Vazir-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../src/assets/fonts/Vazir-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+.ant-typography,
+.ant-btn,
+.ant-menu,
+.ant-tag,
+.ant-input,
+.ant-select,
+.ant-modal,
+.ant-col,
+.ant-form,
+.ant-tabs,
+.ant-form,
+.ant-checkbox-group,
+.ant-checkbox,
+.ant-checkbox-wrapper,
+.ant-drawer,
+.ant-dropdown,
+.ant-notification-notice-content,
+.ant-message-notice-content,
+.ant-card,
+.ant-modal-body {
+
+
+  font-family: var(--font-vazir), Tahoma, sans-serif !important;
+
+
+}
+
+.ant-notification {
+
+
+  font-family: var(--font-vazir), Tahoma, sans-serif !important;
+
+
+}
+
+.ant-notification-notice-icon {
+  font-size: 18px !important
+}
+
+:where(.css-dev-only-do-not-override-1kxhswp).ant-radio-wrapper {
+  font-family: var(--font-vazir), Tahoma, sans-serif !important;
+
+}
+
+:where(.css-dev-only-do-not-override-cvb7x7).ant-select-dropdown {
+  font-family: var(--font-vazir), Tahoma, sans-serif !important;
+
+}
+
+.ant-table-wrapper .css-dev-only-do-not-override-cvb7x7 {
+  font-family: var(--font-vazir), Tahoma, sans-serif !important;
+
+}
+
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* RTL کلی */
+.ant-picker-dropdown {
+  direction: rtl;
+}
+
+/* تقویم کامل RTL */
+.ant-picker-panel {
+  direction: rtl;
+}
+
+/* عنوان ماه‌ها */
+.ant-picker-header-view {
+  direction: rtl;
+  font-family: sans-serif;
+}
+
+/* روزهای هفته RTL */
+.ant-picker-content th {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* جمعه به عنوان آخر هفته (ایران) */
+.ant-picker-cell-in-view.ant-picker-cell-weekend {
+  color: #ff4d4f;
+}
