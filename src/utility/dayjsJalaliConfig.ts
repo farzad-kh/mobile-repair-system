@@ -1,18 +1,14 @@
 // utility/dayjsJalaliConfig.ts
-
-import dayjs from "dayjs";
-import jalaliday from "jalaliday";
-
+import dayjs from "dayjs"
 import "dayjs/locale/fa";
-
+import relativeTime from "dayjs/plugin/relativeTime";
+import jalaliday from "jalali-plugin-dayjs";
 dayjs.extend(jalaliday);
-
-// مهم
+dayjs.extend(relativeTime);
+dayjs.locale("fa");
 dayjs.calendar("jalali");
 
-// مهم
-dayjs.locale("fa");
-
+ 
 // override ماه‌ها
 const faLocale = dayjs.Ls.fa;
 

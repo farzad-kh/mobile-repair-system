@@ -5,7 +5,7 @@ import {
     Path,
 } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
-import dayjs from "../../utility/dayjsJalaliConfig";
+import dayjsJalili from "../../utility/dayjsJalaliConfig";
 import locale from "antd/es/date-picker/locale/fa_IR";
 import { ReactNode } from "react";
 
@@ -41,7 +41,7 @@ const DatePickerFa = <T extends FieldValues>({
                 <DatePicker
                     suffixIcon={icon}
                     style={{ width: "70%" }}
-                    value={field.value ? dayjs(field.value) : null}
+                    value={field.value ? dayjsJalili(field.value) : null}
                     allowClear
                     onChange={(date) => {
 
@@ -51,7 +51,7 @@ const DatePickerFa = <T extends FieldValues>({
                             return;
                         }
 
-                        const now = dayjs();
+                        const now = dayjsJalili();
 
                         const finalDate = date
                             .hour(now.hour())
