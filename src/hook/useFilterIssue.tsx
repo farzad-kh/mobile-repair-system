@@ -1,7 +1,9 @@
-import { ReportStatus } from '@/helper';
+ 
 import { useMemo, useState } from 'react'
 import { useDebounce } from './useDebounce';
-import { RepairFieldType } from '@/types/repair';
+import { RepairFieldType } from '../types/repair';
+import { ReportStatus } from '../helper';
+ 
 
 export const useFilterIssue = ({ repairRequests }: { repairRequests: RepairFieldType[] }) => {
     const [searchVal, setSearchVal] = useState("");

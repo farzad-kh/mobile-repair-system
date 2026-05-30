@@ -1,9 +1,11 @@
 
 import { Button, Tooltip } from 'antd'
 import { EditOutlined } from "@ant-design/icons";
-import { useFormModalStore } from '@/stores/formModalStore';
-import { RepairFieldType } from '@/types/repair';
-import { useResponsive } from '@/hook/useResponsive';
+import { useFormModalStore } from '../../../stores/formModalStore';
+import { RepairFieldType } from '../../../types/repair';
+import { useResponsive } from '../../../hook/useResponsive';
+
+
 
 
 const EditButton = ({ data }: { data: RepairFieldType }) => {

@@ -3,19 +3,20 @@ import { Tag } from "antd";
 import { motion } from "motion/react"
 
 
-import { issue_label, toLocaleStringFa, toPersianNumber } from "@/helper";
+import { issue_label, toLocaleStringFa, toPersianNumber } from "../../helper/index";
 import { FiPhone } from "react-icons/fi";
 import SpeedDial from "../layout/SpeedDial";
 import EditButton from "./speed_dial_Ac/EditButton";
-import { RepairFieldType } from "@/types/repair";
+ 
 import DeleteButton from "./speed_dial_Ac/DeleteButton";
 import { FiCalendar } from "react-icons/fi";
 
 
 
 
-import { jalaliNumeric } from "@/utility/lib/dayjsjalaliFormat";
+import { jalaliNumeric } from "../../utility/lib/dayjsjalaliFormat";
 import SelectStatus from "./select_status/SelectStatus";
+import { RepairFieldType } from "../../types/repair";
 
 
 interface DataProps {

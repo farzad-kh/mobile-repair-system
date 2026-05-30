@@ -2,9 +2,10 @@ import { Popover, Segmented } from 'antd'
 
 // import { createStaticStyles } from 'antd-style';
 import type { GetProp, PopoverProps, SegmentedProps } from 'antd';
-import { report_status_map, ReportStatus } from '@/helper';
-import { useRepairStore } from '@/stores/repairStore';
-import { useNotificationContext } from '@/context/NotificationProvider';
+import { report_status_map, ReportStatus } from '../../../helper';
+import { useRepairStore } from '../../../stores/repairStore';
+import { useNotificationContext } from '../../../context/NotificationProvider';
+ 
 
 const styleFn: SegmentedProps['styles'] = (info): GetProp<SegmentedProps, 'styles', 'Return'> => {
   if (info.props.vertical) {

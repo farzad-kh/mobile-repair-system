@@ -1,5 +1,5 @@
 import { Select } from "antd";
-import { issueOptions } from "@/constants/select_option/index"
+ 
 import {
     Control,
 
@@ -9,7 +9,9 @@ import {
 } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
 import { ReactNode } from "react";
-import { useResponsive } from "@/hook/useResponsive";
+import { useResponsive } from "../../hook/useResponsive";
+import { issueOptions } from "../../constants/select_option";
+ 
 
 interface MultipleSelectProps<T extends FieldValues> {
     name: Path<T>;

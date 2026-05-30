@@ -5,7 +5,7 @@ import {
     Path,
 } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
-import dayjs from "@/utility/dayjsJalaliConfig";
+import dayjs from "../../utility/dayjsJalaliConfig";
 import locale from "antd/es/date-picker/locale/fa_IR";
 import { ReactNode } from "react";
 

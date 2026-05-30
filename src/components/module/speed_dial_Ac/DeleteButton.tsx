@@ -1,8 +1,10 @@
 import { Button, Popconfirm, Tooltip } from 'antd'
 import { DeleteOutlined, InfoCircleOutlined } from "@ant-design/icons";
-import { useRepairStore } from '@/stores/repairStore';
+
 import { createStaticStyles } from 'antd-style';
-import { useNotificationContext } from '@/context/NotificationProvider';
+import { useNotificationContext } from '../../../context/NotificationProvider';
+import { useRepairStore } from '../../../stores/repairStore';
+
 const classNames = createStaticStyles(({ css }) => ({
     container: css`
     padding: 10px;

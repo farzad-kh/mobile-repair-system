@@ -1,5 +1,6 @@
-import { RepairFieldType } from "@/types/repair";
+ 
 import { create } from "zustand";
+import { RepairFieldType } from "../types/repair";
 type ModalMode = "create" | "edit";
 
 interface FormModalStore {

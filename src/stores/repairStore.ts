@@ -1,8 +1,8 @@
-import { SelectStatusProps } from "@/components/module/select_status/SelectStatus";
  
-import { RepairFieldType } from "@/types/repair";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { RepairFieldType } from "../types/repair";
+import { SelectStatusProps } from "../components/module/select_status/SelectStatus";
  
 interface RepairStore {
   repairRequests: RepairFieldType[];

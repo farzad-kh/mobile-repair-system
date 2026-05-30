@@ -1,4 +1,4 @@
-import { brandOptions } from "@/constants/select_option/index"
+ 
 import {
     Control,
 
@@ -9,6 +9,7 @@ import {
 import ControlledInput from './ControlledInput';
 import { Select } from 'antd';
 import { ReactNode } from "react";
+import { brandOptions } from "../../constants/select_option";
 
 
 interface SingelSelectProps<T extends FieldValues> {

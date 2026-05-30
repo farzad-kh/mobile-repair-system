@@ -1,4 +1,6 @@
-import { issueOptions } from "@/constants/select_option";
+import { issueOptions } from "../constants/select_option";
+
+ 
 
 export const toPersianNumber = (num: number | string) => {
   if (num === null || num === undefined || num === "") return "";

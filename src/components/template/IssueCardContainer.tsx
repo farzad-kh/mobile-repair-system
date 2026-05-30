@@ -1,13 +1,16 @@
 import { motion, AnimatePresence } from "motion/react";
 import IssueCard from "../module/IssueCard";
-import { useRepairStore } from "@/stores/repairStore";
+ 
 import { useEffect, useRef } from "react";
 
-import { usePagination } from "@/hook/usePagination";
+ 
 import Pagination from "../module/Pagination";
 import IssueCardControlers from "../module/IssueCardControllers";
-import { useFilterIssue } from "@/hook/useFilterIssue";
+ 
 import NotFoundProperty from "../not-found/NotFound";
+import { useRepairStore } from "../../stores/repairStore";
+import { useFilterIssue } from "../../hook/useFilterIssue";
+import { usePagination } from "../../hook/usePagination";
 
 const IssueCardContainer = () => {
   const repairRequests = useRepairStore((state) => state.repairRequests);

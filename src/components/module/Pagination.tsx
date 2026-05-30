@@ -1,4 +1,6 @@
-import { toLocaleStringFa } from "@/helper";
+import { toLocaleStringFa } from "../../helper";
+
+ 
 
 type Props = {
   currentPage: number;

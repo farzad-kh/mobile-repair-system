@@ -7,8 +7,9 @@ import {
 
 } from "react-hook-form";
 import ControlledInput from "./ControlledInput";
-import { toPersianNumber } from "@/helper";
+ 
 import { ReactNode } from "react";
+import { toPersianNumber } from "../../helper";
 
 interface TextInputProps<T extends FieldValues> {
     name: Path<T>;

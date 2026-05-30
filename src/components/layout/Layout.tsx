@@ -7,8 +7,9 @@ import Footer from './Footer'
 import faIR from "antd/locale/fa_IR";
 
 import { ConfigProvider } from 'antd';
-import useShadcnTheme from '@/shadcnTheme';
-import { NotificationProvider } from '@/context/NotificationProvider';
+import { NotificationProvider } from '../../context/NotificationProvider';
+import useShadcnTheme from '../../shadcnTheme';
+ 
 const Layout = ({ children }: PropsWithChildren) => {
 
     const configProps = useShadcnTheme();
