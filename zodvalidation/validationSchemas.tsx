@@ -6,7 +6,7 @@ export const schemaForm = z.object({
     customerName: z
         .string()
         .min(1, "وارد کردن نام مشتری الزامی است"),
-       
+
 
     phone: z
         .string({ message: "وارد کردن شماره تلفن الزامی است" })
@@ -18,7 +18,7 @@ export const schemaForm = z.object({
         .string()
         .min(1, "وارد کردن مدل گوشی الزامی است"),
     brand: z
-        .string()
+        .string({ message: "وارد کردن برند الزامی است" })
         .min(1, "وارد کردن برند الزامی است"),
 
 
@@ -33,12 +33,12 @@ export const schemaForm = z.object({
 
     dateTime: z.preprocess(
         (val) => (dayjs.isDayjs(val) ? val.toDate() : val),
-        z.date({ message: "تاریخ ورود الزامی است" })
+        z.date({ message: "تاریخ الزامی است" })
     ),
     mobileIssues:
         z.array(z.string()).min(1, "حداقل یک مشکل انتخاب کنید"),
 
-   issueDescription: z.string().max(250,"متن وارد شده طولانی است!").optional(),
+    issueDescription: z.string().max(250, "متن وارد شده طولانی است!").optional(),
     status: z.enum(
         ["pending", "repairing", "completed"],
         {
