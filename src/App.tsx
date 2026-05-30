@@ -1,29 +1,17 @@
 
 
-
-import Layout from '@/components/layout/Layout'
-
-
-import { FormInputContainer } from './components/template/FormInputContainer'
-import IssueCardContainer from './components/template/IssueCardContainer'
-import GlobalIssueModal from './components/module/GlobalIssueModal'
-
-
-
-
-
-
+import Layout from './components/layout/Layout'
+import { lazy, Suspense } from 'react'
+import LoadingSke from './components/loading/LoadingSke'
+const GlobalIssueModal = lazy(() => import('./components/module/GlobalIssueModal'))
+const IssueCardContainer = lazy(() => import('./components/template/IssueCardContainer'))
 function App() {
-
-
   return (
     <Layout>
-      <GlobalIssueModal/>
-      <FormInputContainer />
-      
-      <IssueCardContainer />
-
-
+      <Suspense fallback={<LoadingSke />}>
+        <GlobalIssueModal />
+        <IssueCardContainer />
+      </Suspense>
     </Layout>
   )
 }
