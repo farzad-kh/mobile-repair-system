@@ -1,10 +1,9 @@
-
+import { useMemo, useState } from "react";
 
 interface UsePaginationProps<T> {
   items: T[];
   pageSize: number;
-};
-import {  useMemo, useState } from "react";
+}
 
 export function usePagination<T>({
   items,
@@ -14,19 +13,27 @@ export function usePagination<T>({
   const [currentPage, setCurrentPage] = useState(1);
 
   const maxPage = useMemo(() => {
-    return Math.ceil(items.length / pageSize);
+    return Math.max(1, Math.ceil(items.length / pageSize));
   }, [items.length, pageSize]);
 
+ 
+  const safePage = useMemo(() => {
+    return Math.min(currentPage, maxPage);
+  }, [currentPage, maxPage]);
 
   const currentItems = useMemo(() => {
-    const start = (currentPage - 1) * pageSize;
+    const start = (safePage - 1) * pageSize;
     return items.slice(start, start + pageSize);
-  }, [items, currentPage, pageSize]);
+  }, [items, safePage, pageSize]);
 
   function goToPage(page: number) {
-    const validPage = Math.min(Math.max(page, 1), maxPage);
-    setCurrentPage(validPage);
+    setCurrentPage(Math.min(Math.max(page, 1), maxPage));
   }
 
-  return { currentItems, currentPage, maxPage, goToPage };
+  return {
+    currentItems,
+    currentPage: safePage,
+    maxPage,
+    goToPage,
+  };
 }
