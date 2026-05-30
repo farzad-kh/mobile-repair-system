@@ -43,6 +43,7 @@ const DatePickerFa = <T extends FieldValues>({
                     style={{ width: "70%" }}
                     value={field.value ? dayjsJalili(field.value) : null}
                     allowClear
+                   inputReadOnly
                     onChange={(date) => {
 
                         // when click to clear date 

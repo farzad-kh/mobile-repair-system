@@ -1,4 +1,4 @@
- 
+
 import {
     Control,
 
@@ -10,6 +10,7 @@ import ControlledInput from './ControlledInput';
 import { Select } from 'antd';
 import { ReactNode } from "react";
 import { brandOptions } from "../../constants/select_option";
+import { useResponsive } from "../../hook/useResponsive";
 
 
 interface SingelSelectProps<T extends FieldValues> {
@@ -22,6 +23,7 @@ interface SingelSelectProps<T extends FieldValues> {
 }
 
 const SingelSelect = <T extends FieldValues>({ control, name, errorMessage, label, placeholder, icon }: SingelSelectProps<T>) => {
+    const isMobile = useResponsive({ breakpoint: 786 });
     return (
         <ControlledInput
             errorMessage={errorMessage}
@@ -30,17 +32,19 @@ const SingelSelect = <T extends FieldValues>({ control, name, errorMessage, labe
             control={control}
             render={({ field }) => (
                 <Select
-
+                    virtual={!isMobile ? true : false}
                     prefix={icon}
-                    showSearch={{
-                        filterOption: (input, option) => {
-                            const label = option?.label?.toString().toLowerCase() || "";
-                            const value = option?.value?.toString().toLowerCase() || "";
-                            const searchInput = input.toLowerCase();
-                            return label.includes(searchInput) || value.includes(searchInput);
-                        }
+                    showSearch={
+                        !isMobile ? {
 
-                    }}
+                            filterOption: (input, option) => {
+                                const label = option?.label?.toString().toLowerCase() || "";
+                                const value = option?.value?.toString().toLowerCase() || "";
+                                const searchInput = input.toLowerCase();
+                                return label.includes(searchInput) || value.includes(searchInput);
+                            }
+                        } : false
+                    }
 
                     placeholder={placeholder}
                     onChange={(value) => field.onChange(value)}

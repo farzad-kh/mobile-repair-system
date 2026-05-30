@@ -1,5 +1,5 @@
 import { Select } from "antd";
- 
+
 import {
     Control,
 
@@ -11,7 +11,7 @@ import ControlledInput from "./ControlledInput";
 import { ReactNode } from "react";
 import { useResponsive } from "../../hook/useResponsive";
 import { issueOptions } from "../../constants/select_option";
- 
+
 
 interface MultipleSelectProps<T extends FieldValues> {
     name: Path<T>;
@@ -42,6 +42,7 @@ const MultipleSelect = <T extends FieldValues>({ control, name, label, errorMess
                     placeholder={placeholder}
                     allowClear
                     prefix={icon}
+                    virtual={!isMobile ? true : false}
                     showSearch={
                         !isMobile
                             ? {
