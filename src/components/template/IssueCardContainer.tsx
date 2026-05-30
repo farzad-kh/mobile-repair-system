@@ -54,7 +54,7 @@ const IssueCardContainer = () => {
       <NotFoundProperty
         mode="empty"
         title="هنوز درخواست تعمیری ثبت نشده"
-        label="اولین درخواست تعمیر موبایل را ثبت کنید."
+        label="اولین درخواست تعمیر دستگاه را ثبت کنید."
       />
     );
   }
